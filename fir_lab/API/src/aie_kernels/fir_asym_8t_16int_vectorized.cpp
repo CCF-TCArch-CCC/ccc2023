@@ -15,7 +15,7 @@
 #include <adf.h>
 #include "aie_api/aie.hpp"
 #include "aie_api/aie_adf.hpp"
-#include "kernels.h"
+#include "aie_kernels.h"
 
 static constexpr int16_t taps[FIR_TAPS] = { 0, -7, -16, -3, 29, 54, 44, 18};
 

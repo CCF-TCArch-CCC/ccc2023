@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #include <adf.h>
-#include "kernels.h"
+#include "aie_kernels.h"
 
 int16_t taps[FIR_TAPS] = { 18, 44, 54, 29, -3, -16, -7, 0};
 

@@ -13,13 +13,13 @@
 // limitations under the License.
 
 #include <adf.h>
-#include "kernels.h"
-#include "project.h"
+#include "aie_kernels.h"
+#include "graph.h"
 
 using namespace adf;
 
 fir_asym_8t_16int_graph mygraph;
-simulation::platform<1,1> platform("../data/input.txt", "data/output.txt");
+simulation::platform<1,1> platform("data/input.txt", "data/output_scalar.txt");
 connect<> net0(platform.src[0], mygraph.in);
 connect<> net1(mygraph.out, platform.sink[0]);
 

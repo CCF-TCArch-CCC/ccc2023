@@ -13,28 +13,19 @@
 // limitations under the License.
 
 #include <adf.h>
-#include "kernels.h"
-
+#include "aie_kernels.h"
+#include "graph.h"
 
 using namespace adf;
 
-class fir_asym_8t_16int_graph : public adf::graph {
-private:
-  kernel fir_asym_8t_k_1;
-public:
-  input_port in;
-  output_port out;
-  
-  fir_asym_8t_16int_graph(){
+fir_asym_8t_16int_graph mygraph;
+simulation::platform<1,1> platform("data/input.txt", "data/output_vectorized.txt");
+connect<> net0(platform.src[0], mygraph.in);
+connect<> net1(mygraph.out, platform.sink[0]);
 
-    fir_asym_8t_k_1 = kernel::create(fir_asym_8t_16int_scalar);
-	
-	connect< window<NUM_SAMPLES*2> > net0 (in, fir_asym_8t_k_1.in[0]);
-    connect< window<NUM_SAMPLES*2> > net1 (fir_asym_8t_k_1.out[0], out);
-
-    source(fir_asym_8t_k_1) = "kernels/fir_asym_8t_16int_scalar.cpp";
-
-    runtime<ratio>(fir_asym_8t_k_1) = 0.99;
-
-  }
-};
+int main(void) {
+  mygraph.init();
+  mygraph.run(1);
+  mygraph.end();
+  return 0;
+}
