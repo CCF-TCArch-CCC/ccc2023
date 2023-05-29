@@ -22,7 +22,6 @@ This version of the tutorial has been verified for the following environments. V
 
 1. Vitis User Guide[Vitis Unified Software Documentation](https://docs.xilinx.com/v/u/en-US/ug1416-vitis-documentation)
 
-
     1. [Vitis Unified Software Platform Documentation: Application Acceleration Development](https://docs.xilinx.com/r/en-US/ug1393-vitis-application-acceleration)
 
     1. [Vitis Application Development Flow](https://docs.xilinx.com/r/en-US/ug1393-vitis-application-acceleration/Vitis-Application-Development-Flow)
