@@ -6,7 +6,8 @@ https://www.xilinx.com/products/boards-and-kits/vck5000.html
  
 2.	Download the Vitis 2022.2 version, XRT, Deployment Target Platform and Development Platform according to your OS vision
 https://www.xilinx.com/member/vck5000-aie.html#vitis-flow
-![setup_vck5000](/images/VCK5000_qdma.png)
+
+![setup_vck5000](/image/VCK5000_qdma.png)
 
 3. Please install the **VCK5000 Gen4x8 qdma platform** platform by following the steps here: https://docs.xilinx.com/r/en-US/ug1531-vck5000-install/XRT-and-Deployment-Platform-Installation-Procedures-on-RedHat-and-CentOS
 
