@@ -11,7 +11,7 @@ PL_DIR = $(shell readlink -f ./pl)
 HOST_DIR = $(shell readlink -f ./host)
 HW_LINK = $(shell readlink -f ./hw_link/config.cfg)
 
-XCLBIN_NAME = dsplib
+XCLBIN_NAME = template
 JOBS = 16
 
 ifeq (gen4x8,$(findstring gen4x8, $(XSA)))
@@ -33,12 +33,12 @@ endif
 
 VPP_LDFLAGS := --vivado.synth.jobs $(JOBS) --vivado.impl.jobs $(JOBS)
 
-BUILD_DIR = build.$(TARGET)
+BUILD_DIR = build.$(XSA).$(TARGET)
 OUTPUT_DIR = $(shell readlink -f ./$(BUILD_DIR))
 
 AIE_SRCS = $(AIE_DIR)/$(BUILD_DIR)/libadf.a
 XO_SRCS = $(PL_DIR)/$(BUILD_DIR)/*.xo
-HOST_APP = $(HOST_DIR)/dsplib.exe
+HOST_APP = $(HOST_DIR)/template.exe
 
 all: $(OUTPUT_DIR)/${XCLBIN_NAME}.xclbin $(HOST_APP)
 

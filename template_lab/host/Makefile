@@ -21,7 +21,7 @@ LIBS += -L$(XILINX_XRT)/lib/
 # BUILD PRODUCTS
 # =========================================================
 BUILD_DIR = build
-EXECUTABLE = dsplib.exe
+EXECUTABLE = template.exe
 # ################ TARGET: make all ################
 all: host
 
