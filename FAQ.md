@@ -19,3 +19,10 @@ Load the xclbin template.xclbin
 ```
 This error is coming because of my server OS is different than the OS where you compiled the host executable. 
 Please rebuild the host executable on the same OS. Note that the XCLBIN can be reused.
+
+To calculate the maximum performance for a given data path, it is necessary to multiply the number of MACs per instruction by the clock frequency of the AI Engine kernel. 
+
+For example, with 16-bit input vectors X and Z, the vector processor can achieve 32 MACs per instruction. Using the clock frequency for the slowest speed grade results in:
+32 MACs * 1 GHz clock frequency = 32 Giga MAC operations/second.
+
+
